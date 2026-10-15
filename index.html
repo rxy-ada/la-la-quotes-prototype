@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La La Quotes - 原型</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>La La Quotes 原型</h1>
+      <p class="tag">La La Land 风格主题 · 随机轻音乐 · 多语言示例句库</p>
+      <div class="search-bar">
+        <input id="searchInput" placeholder="输入情感关键词（例如：表白 / 爱 / 成长 / 死亡 / 励志）" />
+        <button id="searchBtn">搜索</button>
+      </div>
+    </div>
+    <div class="music-control" title="点击切换背景音乐">
+      <button id="toggleMusic">🔈</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <div class="login-card">
+        <label>模式：</label>
+        <select id="modeSelect">
+          <option value="guest">游客模式</option>
+          <option value="wechat">微信模拟登录</option>
+        </select>
+        <div id="wechatInputWrap" style="display:none;">
+          <input id="wechatIdInput" placeholder="输入好友微信号查看其收藏" />
+          <button id="loadFavBtn">查看收藏</button>
+        </div>
+      </div>
+
+      <h3>分类（场景 / 情绪）</h3>
+      <ul id="categoryList" class="categories"></ul>
+
+      <h3>已收藏</h3>
+      <div id="favoritesList">（游客模式下收藏保存在本地浏览器）</div>
+    </aside>
+
+    <section class="results">
+      <div id="resultsInfo"></div>
+      <ul id="resultsList" class="quote-list"></ul>
+    </section>
+  </main>
+
+  <template id="quoteTpl">
+    <li class="quote-card">
+      <p class="quote-text"></p>
+      <div class="meta"><span class="source"></span><span class="tags"></span></div>
+      <div class="actions">
+        <button class="saveBtn">收藏</button>
+        <button class="shareBtn">分享链接</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
